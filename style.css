@@ -1,0 +1,469 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Kolorystyka */
+  --light: #f6f6f9;
+  --primary: #1976d2;
+  --light-primary: #cfe8ff;
+  --grey: #fff;
+  --dark-grey: #aaaaaa;
+  --dark: #363949;
+  --danger: #d32f2f;
+  --light-danger: #fecdd3;
+  --warning: #fbc02d;
+  --light-warning: #fff2c6;
+  --success: #388e3c;
+  --light-success: #bbf7d0;
+  /* Nowa paleta */
+  --aqua: #092635;
+  --dark-green: #1b4242;
+  --green: #5c8374;
+  --light-green: #9ec8b9;
+}
+
+/* Ogólne style tekstowe */
+li,
+a,
+button {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+/* Ogólne style body */
+body {
+  display: block;
+  align-items: flex-end; /* Zawartość strony zawsze będzie lądować na dole */
+  justify-content: center;
+  min-height: 100vh;
+  /* background-image: url("background.png"); */
+  background-color: #020000;
+  font-family: "Audiowide", sans-serif;
+}
+
+/* Styl nagłówka */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-family: "Audiowide", sans-serif;
+}
+
+.logo {
+  height: auto;
+  color: white;
+  font-family: "Audiowide", sans-serif;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.3s;
+  font-family: "Audiowide", sans-serif;
+}
+
+.p {
+  color: white;
+  font-family: "Audiowide", sans-serif;
+}
+
+.cta button {
+  background: #64562f3d;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: "Audiowide", sans-serif;
+  border-radius: 5px;
+}
+
+/* Sekcja Hero */
+
+#hero {
+  width: 100%;
+  height: 100vh;
+  background-image: url("logosz.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.ip {
+  width: 1000px;
+  height: 500px;
+}
+.hero-content {
+  position: absolute;
+  top: 40%;
+  left: 32%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+}
+
+.hero-content h1 {
+  font-size: 40px;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+.hero-content h2 {
+  font-size: 24px;
+  margin-bottom: 20%;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.serwer {
+  text-align: center;
+  color: white;
+  margin-bottom: 5%;
+  margin-right: 40%;
+  padding-bottom: 150px;
+  font-size: 60px;
+}
+
+.serwer1 h1 {
+  position: absolute;
+  bottom: 10%;
+  left: 32%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-size: 60px;
+}
+
+/* Karta */
+.card {
+  width: 850px; /* Ustawienie szerokości na 50% */
+  height: 400px;
+  background: hsla(263, 62%, 15%, 0.158);
+  position: relative;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 50px;
+  left: 50%; /* Przesunięcie o połowę szerokości */
+  transform: translateX(-50%); /* Przesunięcie w lewo o połowę szerokości */
+  top: -240px;
+  margin-right: 10%;
+}
+
+.card h2 {
+  z-index: 1;
+  color: white;
+  font-size: 2em;
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+}
+
+.image-container {
+  width: 250%; /* Dostosuj szerokość kontenera obrazów */
+  height: 100%;
+  float: left;
+  position: relative;
+}
+
+@keyframes changeImage {
+  0% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.ip2 {
+  width: 1000px;
+  height: 500px;
+  float: right;
+  position: relative;
+}
+
+.serwer-2 {
+  text-align: center;
+  color: white;
+  margin-bottom: 5%;
+  margin-right: 40%;
+  padding-bottom: 150px;
+  font-size: 60px;
+}
+
+.card-2 {
+  width: 850px; /* Ustawienie szerokości na 50% */
+  height: 400px;
+  background: hsla(263, 62%, 15%, 0.158);
+  position: relative;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 50px;
+  right: 50%; /* Przesunięcie o połowę szerokości */
+  transform: translateX(-50%); /* Przesunięcie w lewo o połowę szerokości */
+  top: -240px;
+  margin-right: 10%;
+}
+
+.infoo {
+  width: 50%;
+  height: 100%;
+  float: left;
+  padding: 20px;
+  box-sizing: border-box;
+  color: white;
+}
+
+.infoo ul {
+  list-style: none;
+  padding: 0;
+}
+
+.infoo ul li {
+  margin-bottom: 10px;
+}
+
+.infoo ul li::before {
+  content: "\2022"; /* Użyj kropki jako punktora */
+  color: var(--light-success); /* Kolor punktora */
+  font-size: 1.2em; /* Rozmiar punktora */
+  margin-right: 10px; /* Odległość między punktorem a tekstem */
+}
+
+.infoo ul li:nth-child(1) {
+  font-weight: bold; /* Wyróżnij pierwszy punkt */
+  color: var(--light-success); /* Kolor pierwszego punktu */
+}
+
+.infoo ul li:nth-child(2) {
+  font-style: italic; /* Pochyl drugi punkt */
+  color: var(--light-warning); /* Kolor drugiego punktu */
+}
+
+.infoo p {
+  margin-top: 20px; /* Odstęp od listy */
+}
+
+.wszystkie {
+  width: 2178px;
+  height: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.image-container img {
+  width: auto;
+  height: 90%;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+}
+
+.card-image {
+  width: 10%;
+  height: auto;
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  animation: changeImage 8000ms infinite;
+}
+
+.card-image:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.card-image:nth-child(2) {
+  animation-delay: 1s; /* zmniejszenie opóźnienia dla drugiego obrazka */
+}
+
+.card-image:nth-child(3) {
+  animation-delay: 2s; /* zmniejszenie opóźnienia dla trzeciego obrazka */
+}
+
+.card-image:nth-child(4) {
+  animation-delay: 3s; /* zmniejszenie opóźnienia dla czwartego obrazka */
+}
+
+.card-image:nth-child(5) {
+  animation-delay: 4s; /* zmniejszenie opóźnienia dla piątego obrazka */
+}
+
+.card-image:nth-child(6) {
+  animation-delay: 5s; /* zmniejszenie opóźnienia dla szóstego obrazka */
+}
+
+.card-image:nth-child(7) {
+  animation-delay: 6s; /* zmniejszenie opóźnienia dla siódmego obrazka */
+}
+
+.card-image:nth-child(8) {
+  animation-delay: 7s; /* zmniejszenie opóźnienia dla ósmego obrazka */
+}
+
+.info {
+  width: 50%;
+  height: 100%;
+  float: left;
+  padding: 20px;
+  box-sizing: border-box;
+  color: white;
+}
+
+.info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info ul li {
+  margin-bottom: 10px;
+}
+
+.info ul li::before {
+  content: "\2022"; /* Użyj kropki jako punktora */
+  color: var(--light-success); /* Kolor punktora */
+  font-size: 1.2em; /* Rozmiar punktora */
+  margin-right: 10px; /* Odległość między punktorem a tekstem */
+}
+
+.info ul li:nth-child(1) {
+  font-weight: bold; /* Wyróżnij pierwszy punkt */
+  color: var(--light-success); /* Kolor pierwszego punktu */
+}
+
+.info ul li:nth-child(2) {
+  font-style: italic; /* Pochyl drugi punkt */
+  color: var(--light-warning); /* Kolor drugiego punktu */
+}
+
+.info p {
+  margin-top: 20px; /* Odstęp od listy */
+}
+/*-----------------------------------------------------------------------------------------------------*/ /*FORUM GŁÓWNE*/ /*-------------------------------------------------------------*/
+.forum-content {
+  max-width: 90%;
+  margin-left: 5%;
+
+  place-content: center;
+  place-items: center;
+  overflow: hidden;
+}
+.forum {
+  margin-bottom: 300px;
+}
+
+.forum-content .accordion-list ul {
+  padding: 0;
+  list-style: none;
+}
+
+.forum-content .accordion-list li + li {
+  margin-top: 15px;
+}
+
+.forum-content .accordion-list li {
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+  background: #07182e59;
+  color: white;
+  border-radius: 20px;
+}
+
+.forum-content .accordion-list span {
+  color: #47b2e4;
+  font-weight: 600;
+  font-size: 18px;
+  padding-right: 10px;
+}
+
+.forum-content .accordion-list i {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.forum-content .accordion-list p {
+  margin-bottom: 0;
+  padding: 10px 0 0 0;
+}
+
+.forumm {
+  text-align: center;
+  color: white;
+  margin-bottom: 5%;
+  font-size: 60px;
+}
+
+.reg-a {
+  color: gray;
+  margin-bottom: 20px;
+  font-size: 15px;
+  font-family: "Audiowide", sans-serif;
+}
+
+.reg-ul li {
+  display: inline;
+  font-family: "Audiowide", sans-serif;
+}
+
+.forum-content .accordion-list .reg-ul {
+  margin-left: -17px;
+}
+
+.accordion-list h1 {
+  font-family: "Audiowide", sans-serif;
+  color: white;
+}
+.flickering-text {
+  animation: flicker 1s infinite;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}

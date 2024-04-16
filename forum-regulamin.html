@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style-regulamin.css" rel="stylesheet" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Audiowide"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <title>Esportowa Polska - Forum Serwerowe Counter Strike 2</title>
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="logo">Esportowa Polska</a>
+      <nav>
+        <ul class="nav_links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="lista.html">Serwery</a></li>
+          <li><a href="http://wp.esportowapolska.pl">Skiny</a></li>
+          <li><a href="sklep.html">Sklep VIP</a></li>
+        </ul>
+      </nav>
+      <a class="cta" href="#"
+        ><button id="loginBtn">Zaloguj</button>
+        <button id="registerBtn">Zarejestruj się</button></a
+      >
+    </header>
+    <main>
+      <section class="forum-section">
+        <h2>Regulamin</h2>
+        <div class="forum-content">
+          <p>
+            Witaj na naszym forum. Przeczytaj poniższy regulamin przed udziałem
+            w dyskusji:
+          </p>
+          <ol class="regulamin-list">
+            <li>
+              Zachowuj się kulturalnie: Szanuj innych graczy i ich prywatność.
+              Unikaj obraźliwego, rasistowskiego, seksistowskiego,
+              homofobicznego lub innego nieodpowiedniego języka. Nie wyzywaj,
+              nie prowokuj, nie trolluj ani nie napastuj innych graczy.
+            </li>
+            <li>
+              Bez oszustw: Korzystanie z jakiejkolwiek formy oszustwa,
+              cheatowania, hackowania lub nieuczciwej gry jest surowo
+              zabronione. Wszelkie naruszenia będą surowo karane, a
+              niebezpieczne czynności będą nagradzane permanentnym banem.
+            </li>
+            <li>
+              Brak spamu: Unikaj nadmiernego spamowania na czacie. Nie reklamuj
+              innych serwerów, stron internetowych ani żadnych treści
+              niezwiązanych z tematyką CS:GO bądź innymi.
+            </li>
+            <li>
+              Brak nieodpowiednich treści: Zakazane jest publikowanie lub
+              udostępnianie treści pornograficznych, obraźliwych, wulgarnych,
+              agresywnych lub nieodpowiednich. Pamiętaj, że na serwerze mogą
+              znajdować się również nieletni gracze.
+            </li>
+            <li>
+              Nie nadużywaj mikrofonu: Unikaj nadmiernego używania mikrofonu.
+              Używaj go tylko wtedy, gdy jest to naprawdę konieczne i pamiętaj,
+              że inni gracze również chcą mieć możliwość komunikacji.
+            </li>
+            <li>
+              Nie wykorzystuj błędów: Jeśli odkryjesz jakiekolwiek błędy lub
+              luki w grze, nie wykorzystuj ich celowo. Zgłoś je administracji
+              serwera, aby zostały naprawione.
+            </li>
+            <li>
+              Szanuj decyzje administracji: Decyzje administratorów i
+              moderatorów są ostateczne. Szanuj ich autorytet i nie utrudniaj im
+              wykonywania swoich obowiązków. W przypadku problemów zgłoś je
+              odpowiedniemu członkowi administracji.
+            </li>
+            <li>
+              Nie udostępniaj danych osobowych: Nie publikuj ani nie udostępniaj
+              danych osobowych innych graczy bez ich zgody. Szanuj prywatność
+              innych i unikaj wszelkich działań naruszających ich prywatność.
+            </li>
+            <li>
+              Zachowuj fair play: Graj uczciwie i z szacunkiem wobec innych
+              graczy. Unikaj zachowań, które mogą zakłócać równowagę rozgrywki,
+              takich jak blocking (blokowanie) lub griefing (sabotaż).
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="forum-section">
+        <h2>Forum</h2>
+        <div class="forum-content">
+          <div id="posts">
+            <!-- Tu będą posty użytkowników -->
+          </div>
+          <form id="post-form">
+            <textarea id="post-content" placeholder="Napisz post..."></textarea>
+            <button type="submit">Dodaj post</button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

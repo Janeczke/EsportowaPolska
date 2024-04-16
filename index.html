@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Audiowide"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="main.js"></script>
+    <title>Esportowa Polska - Forum Serwerowe Counter Strike 2</title>
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="logo">Esportowa Polska</a>
+      <nav>
+        <ul class="nav_links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="lista.html">Serwery</a></li>
+          <li><a href="http://wp.esportowapolska.pl">Skiny</a></li>
+          <li><a href="sklep.html">Sklep VIP</a></li>
+        </ul>
+      </nav>
+      <a class="cta" href="#"
+        ><button id="loginBtn">Zaloguj</button>
+        <button id="registerBtn">Zarejestruj się</button></a
+      >
+    </header>
+
+    <div class="content">
+      <section id="hero" class="d-flex align-items-center">
+        <div class="hero-content">
+          <h1>Esportowa Polska</h1>
+          <h2>By LISEK and JANEK</h2>
+        </div>
+        <div class="serwer1">
+          <h1><p class="flickering-text">Witaj Gość</p></h1>
+          <!--Dane z bazy (nazwa użytkownika)-->
+        </div>
+      </section>
+      <main class="wszystkie">
+        <main class="ip">
+          <div class="serwer"></div>
+          <div class="card">
+            <div class="image-container">
+              <img class="card-image" src="vertigo.png" alt="Obrazek 1" />
+              <img class="card-image" src="overpass.png" alt="Obrazek 2" />
+              <img class="card-image" src="dust2.png" alt="Obrazek 3" />
+              <img class="card-image" src="nuke.png" alt="Obrazek 4" />
+              <img class="card-image" src="inferno.png" alt="Obrazek 5" />
+              <img class="card-image" src="office.png" alt="Obrazek 6" />
+              <img class="card-image" src="italy.png" alt="Obrazek 7" />
+              <img class="card-image" src="mirage.png" alt="Obrazek 8" />
+
+              <!-- Dodaj więcej obrazków, jeśli chcesz -->
+            </div>
+            <div class="info">
+              <ul>
+                <h1>
+                  Ip Serwera :
+                  <a href="steam://connect/193.33.176.199:27015/mixy"
+                    >193.33.176.199:27015</a
+                  >
+                </h1>
+                <li>Właściciel Serwera : Lesio</li>
+                <li>Opiekun Serwera : Janek</li>
+                <!-- Dodaj kolejne punkty tutaj -->
+              </ul>
+              <p></p>
+              <p>Pytania/Problemy</p>
+              <p>Skargi na admina/gracza</p>
+              <p>VIP</p>
+              <p>Podania o admina</p>
+              <a class="p" href="http://906648.node28.pukawka.pl"
+                ><p>Dema</p></a
+              >
+            </div>
+          </div>
+        </main>
+
+        <main class="ip2">
+          <div class="serwer2"></div>
+          <div class="card2">
+            <div class="image-container2">
+              <img class="card-image" src="vertigo.png" alt="Obrazek 1" />
+              <img class="card-image" src="overpass.png" alt="Obrazek 2" />
+              <img class="card-image" src="dust2.png" alt="Obrazek 3" />
+              <img class="card-image" src="nuke.png" alt="Obrazek 4" />
+              <img class="card-image" src="inferno.png" alt="Obrazek 5" />
+              <img class="card-image" src="office.png" alt="Obrazek 6" />
+              <img class="card-image" src="italy.png" alt="Obrazek 7" />
+              <img class="card-image" src="mirage.png" alt="Obrazek 8" />
+
+              <!-- Dodaj więcej obrazków, jeśli chcesz -->
+            </div>
+            <div class="infoo">
+              <ul>
+                <h1>
+                  Ip Serwera :
+                  <a href="steam://connect/193.33.176.199:27015/mixy"
+                    >193.33.176.199:27014</a
+                  >
+                </h1>
+                <li>Właściciel Serwera : Lesio</li>
+                <li>Opiekun Serwera : Janek</li>
+                <!-- Dodaj kolejne punkty tutaj -->
+              </ul>
+              <p></p>
+              <p>Pytania/Problemy</p>
+              <p>Skargi na admina/gracza</p>
+              <p>VIP</p>
+              <p>Podania o admina</p>
+              <a class="p" href="http://906648.node28.pukawka.pl"
+                ><p>Dema</p></a
+              >
+            </div>
+          </div>
+        </main>
+      </main>
+      <div class="forum">
+        <section class="forum-content">
+          <div class="forumm">
+            <h1>Forum Główne</h1>
+          </div>
+          <div class="accordion-list">
+            <ul>
+              <li>
+                <a
+                  data-bs-toggle="collapse"
+                  class="collapse"
+                  data-bs-target="#accordion-list-1"
+                >
+                  <a href="forum-regulamin.html">
+                    <h1>Regulamin i Ogłoszenia</h1>
+                  </a>
+                  <i class="bx bx-chevron-down icon-show"></i
+                  ><i class="bx bx-chevron-up icon-close"></i
+                ></a>
+                <div
+                  id="accordion-list-1"
+                  class="collapse show"
+                  data-bs-parent=".accordion-list"
+                >
+                  <h3 class="reg-a">
+                    Regulaminy i ogłoszenia obowiązujące na forum oraz
+                    serwerach!
+                  </h3>
+                  <ul class="reg-ul">
+                    <li>Ogłoszenia i informacje</li>
+                    <li>Regulaminy serwerów</li>
+                    <li>Regulaminy Forum</li>
+                  </ul>
+                </div>
+              </li>
+
+              <li>
+                <a
+                  data-bs-toggle="collapse"
+                  class="collapse"
+                  data-bs-target="#accordion-list-1"
+                >
+                  <a href="forum-sprawy.html">
+                    <h1>Sprawy dotyczące Forum</h1>
+                  </a>
+                  <i class="bx bx-chevron-down icon-show"></i
+                  ><i class="bx bx-chevron-up icon-close"></i
+                ></a>
+                <div
+                  id="accordion-list-1"
+                  class="collapse show"
+                  data-bs-parent=".accordion-list"
+                >
+                  <h3 class="reg-a">Sprawy dotyczące forum</h3>
+                  <ul class="reg-ul">
+                    <li>Propozycje i Uwagi</li>
+                    <li>Usługi</li>
+                    <li>Skargi i Pochwały</li>
+                  </ul>
+                </div>
+              </li>
+
+              <li>
+                <a
+                  data-bs-toggle="collapse"
+                  class="collapse"
+                  data-bs-target="#accordion-list-1"
+                >
+                  <h1>Rekrutacja</h1>
+                  <i class="bx bx-chevron-down icon-show"></i
+                  ><i class="bx bx-chevron-up icon-close"></i
+                ></a>
+                <div
+                  id="accordion-list-1"
+                  class="collapse show"
+                  data-bs-parent=".accordion-list"
+                >
+                  <h3 class="reg-a">
+                    Jeśli chcesz wspomóc naszą ekipę to zaprszamay do składania
+                    podań
+                  </h3>
+                  <ul class="reg-ul">
+                    <li>Admin Forum</li>
+                    <li>Admin Serwera FFA</li>
+                    <li>Moderator Serwera FFA</li>
+                    <li>Grafik</li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
