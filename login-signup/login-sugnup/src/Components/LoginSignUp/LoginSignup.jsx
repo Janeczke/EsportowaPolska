@@ -16,27 +16,42 @@ const LoginSignup = () => {
         <div className="underline"></div>
       </div>
       <div className="inputs">
-        <div className="input">
-          <img src="{user_icon}" alt="" />
-          <input type="text" placeholder="Name" />
-        </div>
-        <div className="input">
-          <img src="{email_icon}" alt="" />
-          <input type="email" placeholder="Email" />
-        </div>
+        {action === "Login" ? (
+          <div></div>
+        ) : (
+          <div className="input">
+            <img src="{user_icon}" alt="" />
+            <input type="text" placeholder="Nazwa użytkownika/Email" />
+          </div>
+        )}
         <div className="input">
           <img src="{password_icon}" alt="" />
           <input type="password" placeholder="Password" />
         </div>
       </div>
-      <div className="forgot-password">
-        Lost Password? <span>Click Here!</span>
-      </div>
+      {action === "Zarejestruj" ? (
+        <div></div>
+      ) : (
+        <div className="forgot-password">
+          Nie pamiętasz hasła? <span>Kliknij tutaj!</span>
+        </div>
+      )}
+
       <div className="submit-container">
-        <div className={action === "Zaloguj" ? "submit gray" : "submit"}>
+        <div
+          className={action === "Zaloguj" ? "submit gray" : "submit"}
+          onClick={() => {
+            setAction("Zarejestruj");
+          }}
+        >
           Zarejestruj
         </div>
-        <div className={action === "Zarejestruj" ? "submit gray" : "submit"}>
+        <div
+          className={action === "Zarejestruj" ? "submit gray" : "submit"}
+          onClick={() => {
+            setAction("Zaloguj");
+          }}
+        >
           Zaloguj
         </div>
       </div>
