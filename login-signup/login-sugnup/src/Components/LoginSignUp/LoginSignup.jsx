@@ -2,9 +2,9 @@ import React from "react";
 import "./LoginSignup.css";
 import { useState } from "react";
 
-// import user_icon from "..Assets/person.png";
-// import email_icon from "..Assets/email.png";
-// import password_icon from "..Assets/padlock.png";
+// import user_icon from "../Assets/person.png";
+// import email_icon from "../Assets/email.png";
+// import password_icon from "../Assets/padlock.png";
 
 const LoginSignup = () => {
   const [action, setAction] = useState("Zaloguj");
@@ -26,7 +26,7 @@ const LoginSignup = () => {
         )}
         <div className="input">
           <img src="{password_icon}" alt="" />
-          <input type="password" placeholder="Password" />
+          <input type="password" placeholder="Hasło" />
         </div>
       </div>
       {action === "Zarejestruj" ? (
