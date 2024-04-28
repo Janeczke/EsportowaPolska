@@ -14,7 +14,6 @@
     />
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <div id="root"></div>
     <script src="main.js"></script>
     <title>Esportowa Polska - Forum Serwerowe Counter Strike 2</title>
   </head>
@@ -29,13 +28,7 @@
           <li><a href="sklep.html">Sklep VIP</a></li>
         </ul>
       </nav>
-      <button
-        class="cta"
-        href="login-signup/login-sugnup/src/Components/LoginSignUp/LoginSignup.jsx"
-        id="loginBtn"
-      >
-        Logowanie
-      </button>
+      <button class="cta" id="loginBtn">Logowanie</button>
     </header>
 
     <div class="content">
@@ -50,7 +43,38 @@
         </div>
       </section>
       <div class="serwery">
-        <div></div>
+        <div class="content">
+          <ul class="team">
+            <li class="member co-funder">
+              <div class="thumb">
+                <img src="inferno.png" />
+              </div>
+              <div class="description">
+                <h3>Serwer CS2</h3>
+                <p>
+                  Serwer Counter Strike 2<br /><a
+                    onclick="copyToClipboard('193.33.176.199:27015')"
+                    >193.33.176.199:27015</a
+                  >
+                </p>
+              </div>
+            </li>
+            <li class="member co-funder">
+              <div class="thumb">
+                <img src="discord.png" />
+              </div>
+              <div class="description">
+                <h3>Serwer Discord</h3>
+                <p>
+                  Serwer Discord<br /><a
+                    onClick="copyToClipboard('https://discord.gg/JVr3nQUr')"
+                    >https://discord.gg/JVr3nQUr</a
+                  >
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
       <div class="forum">
         <section class="forum-content">
@@ -74,10 +98,10 @@
                   class="collapse show"
                   data-bs-parent=".accordion-list"
                 >
-                  <h3 class="reg-a">
+                  <h2 class="reg-a">
                     Regulaminy i ogłoszenia obowiązujące na forum oraz
                     serwerach!
-                  </h3>
+                  </h2>
                   <ul class="reg-ul">
                     <li>Ogłoszenia i informacje</li>
                     <li>Regulaminy serwerów</li>
@@ -101,7 +125,7 @@
                   class="collapse show"
                   data-bs-parent=".accordion-list"
                 >
-                  <h3 class="reg-a">Sprawy dotyczące forum</h3>
+                  <h2 class="reg-a">Sprawy dotyczące forum</h2>
                   <ul class="reg-ul">
                     <li>Propozycje i Uwagi</li>
                     <li>Usługi</li>
@@ -123,10 +147,10 @@
                   class="collapse show"
                   data-bs-parent=".accordion-list"
                 >
-                  <h3 class="reg-a">
+                  <h2 class="reg-a">
                     Jeśli chcesz wspomóc naszą ekipę to zaprszamay do składania
                     podań
-                  </h3>
+                  </h2>
                   <ul class="reg-ul">
                     <li>Admin Forum</li>
                     <li>Admin Serwera FFA</li>
@@ -140,5 +164,21 @@
         </section>
       </div>
     </div>
+    <footer>
+      <div class="footer-content">
+        <div class="section">
+          <h4>Tutaj może być twoja reklama</h4>
+          <p>Treść</p>
+        </div>
+        <div class="section">
+          <h4>Sponsorzy</h4>
+          <p>Treść</p>
+        </div>
+        <div class="section">
+          <h4>Tutaj może być twoja reklama</h4>
+          <p>Treść</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
