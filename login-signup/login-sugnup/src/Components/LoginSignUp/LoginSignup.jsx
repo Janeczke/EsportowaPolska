@@ -1,177 +1,81 @@
-import React, { Component } from "react";
-import axios from "axios";
-import "./LoginSignup.css";
+import React, { Component } from 'react'
+import './LoginSignup.scss'
+import { Link, Navigate } from 'react-router-dom'
+import axios from 'axios'
 
 class SignIn extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      username: "",
-      email: "",
-      password: "",
-      repeatedPassword: "",
-      errorMsg: "",
-      disableBtn: false,
-      action: "Zaloguj", // Dodane, aby uniknąć błędu z undefined
-    };
+
+  state = {
+    login: '',
+    email: '',
+    password: '',
+    repeatedPassword: '',
+    errorMsg: '',
+    disableBtn: false
   }
 
-  handleChange = (e) => {
-    this.setState({ [e.target.id]: e.target.value });
-  };
+  handleChange = e => {
+    this.setState({[e.target.id]: e.target.value})
+  }
+  
+  handleSubmit = e => {
+    e.preventDefault();
+
+    if (this.state.username.trim() === '' || this.state.email.trim() === '' || this.state.password === '' || this.state.repeatedPassword === ''){
+      this.setState({errorMsg: 'Brak danych! Uzupełnij formularz.'});
+      this.setState({disableBtn: false});
+      return;
+    }
+
+    this.setState({errorMsg: 'waiting'})
+
+    let config = {
+      headers: {
+        "Accept-Language": "pl"
+      }
+    }
+
+    axios.post(process.env.REACT_APP_SERVER_URL + '/auth/register', {
+      "username": this.state.username,
+        "email": this.state.email,
+        "password": this.state.password,
+        "repeatedPassword": this.state.repeatedPassword
+      }, config).catch(err => {
+       this.setState({errorMsg: err.response.data.message});
+       this.setState({disableBtn: false});
+      });
+  }
+
+  handleDisableBtn = () => {
+    this.setState({disableBtn: true});
+  }
 
   render() {
-    const { action } = this.state; // Dodane
+      let errorMsg = <div className="error-msg">{ this.state.errorMsg }</div>
+      if (this.state.errorMsg === 'waiting') {
+        errorMsg = <div className="waiting-msg"></div>
+      }
 
+    if (!localStorage.getItem('token')){
     return (
-      <div className="container">
-        <div className="header">
-          <div className="text">{action}</div>
-          <div className="underline"></div>
-        </div>
-        <div className="inputs">
-          {action === "Login" ? (
-            <div></div>
-          ) : (
-            <div className="input">
-              <img src="{user_icon}" alt="" />
-              <input
-                type="text"
-                placeholder="Nazwa użytkownika"
-                id="username"
-                value={this.state.username} // Dodane
-                onChange={(e) => this.setState({ username: e.target.value })} // Dodane
-              />
-            </div>
-          )}
-          <div className="input">
-            <img src="{password_icon}" alt="" />
-            <input
-              type="email"
-              placeholder="Email"
-              id="email"
-              value={this.state.email} // Dodane
-              onChange={(e) => this.setState({ email: e.target.value })} // Dodane
-            />
+      <div className="auth-container">
+      <form className="auth-form" onSubmit={ this.handleSubmit } autoComplete="off">
+        <h1 className="auth-title"> Zarejestruj </h1>
+          <input className="auth-input" maxLength="30" type="text" id="username" placeholder="Nazwa użytkownika" onChange={ this.handleChange } /> 
+          <input className="auth-input" maxLength="30" type="text" id="email" placeholder="Adres email" onChange={ this.handleChange } />
+          <input className="auth-input" maxLength="25" type="password" id="password" placeholder="Hasło" onChange={ this.handleChange } />
+          <input className="auth-input" maxLength="25" type="password" id="repeatedPassword" placeholder="Powtórz hasło" onChange={ this.handleChange } />
+        { errorMsg }
+          <div className="auth-buttons">
+            <input className={this.state.disableBtn ? "auth-btn disable-btn" : "auth-btn"} onClick={ this.handleDisableBtn } type="submit" value="Zarejestruj" />
+            <Link to='/login'><input className="auth-btn" type="button" value="Log in" /></Link>
           </div>
-          <div className="input">
-            <img src="{password_icon}" alt="" />
-            <input
-              type="password"
-              placeholder="Hasło"
-              id="password"
-              value={this.state.password} // Dodane
-              onChange={(e) => this.setState({ password: e.target.value })} // Dodane
-            />
-          </div>
-          <div className="input">
-            <img src="{password_icon}" alt="" />
-            <input
-              type="password"
-              placeholder="Powtórz Hasło"
-              id="repeatedPassword"
-              value={this.state.repeatedPassword} // Dodane
-              onChange={
-                (e) => this.setState({ repeatedPassword: e.target.value }) // Dodane
-              }
-            />
-          </div>
-        </div>
-        {action === "Zarejestruj" ? (
-          <div></div>
-        ) : (
-          <div className="forgot-password">
-            Nie pamiętasz hasła? <span>Kliknij tutaj!</span>
-          </div>
-        )}
-
-        <div className="submit-container">
-          <div
-            className={action === "Zaloguj" ? "submit gray" : "submit"}
-            onClick={() => {
-              if (action === "Zarejestruj") {
-                this.handleSubmit();
-              } else {
-                this.setState({ action: "Zarejestruj" });
-              }
-            }}
-          >
-            Zarejestruj
-          </div>
-          <div
-            className={action === "Zarejestruj" ? "submit gray" : "submit"}
-            onClick={() => {
-              if (action === "Zaloguj") {
-                this.handleSubmit();
-              } else {
-                axios
-                  .post(process.env.REACT_APP_SERVER_URL + "/auth/register", {
-                    emailAddress: this.state.email,
-                    username: this.state.username,
-                    matchingPassword: this.state.repeatedPassword,
-                    password: this.state.password,
-                    userName: "",
-                  })
-                  .then((res) => {
-                    axios
-                      .post(process.env.REACT_APP_SERVER_URL + "/auth/login", {
-                        Token: "",
-                        username: this.state.username,
-                        password: this.state.password,
-                      })
-                      .then((res) => {
-                        localStorage.setItem("token", res.data);
-                        window.location.reload();
-                        this.props.history.push("/");
-                      })
-                      .catch((err) =>
-                        this.setState({ errorMsg: err.response.data.message })
-                      );
-                  })
-                  .catch((err) => {
-                    this.setState({ errorMsg: err.response.data.message });
-                    this.setState({ disableBtn: false });
-                  });
-              }
-            }}
-          >
-            Zaloguj
-          </div>
-        </div>
+      </form>
       </div>
-    );
+    )} else {
+      return <Navigate to='/'/>
+    }
   }
-
-  handleSubmit = () => {
-    axios
-      .post("http://localhost:8080/auth/register", {
-        emailAddress: this.state.email,
-        username: this.state.username,
-        matchingPassword: this.state.repeatedPassword,
-        password: this.state.password,
-        userName: "",
-      })
-      .then((res) => {
-        axios
-          .post(process.env.REACT_APP_SERVER_URL + "/auth/login", {
-            Token: "",
-            username: this.state.username,
-            password: this.state.password,
-          })
-          .then((res) => {
-            localStorage.setItem("token", res.data);
-            window.location.reload();
-            this.props.history.push("/");
-          })
-          .catch((err) =>
-            this.setState({ errorMsg: err.response.data.message })
-          );
-      })
-      .catch((err) => {
-        this.setState({ errorMsg: err.response.data.message });
-        this.setState({ disableBtn: false });
-      });
-  };
 }
 
 export default SignIn;
