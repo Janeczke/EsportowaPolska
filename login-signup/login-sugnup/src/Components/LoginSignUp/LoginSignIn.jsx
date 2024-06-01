@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./LoginSignup.scss";
+import "./LoginSignIn.scss";
 import { Link, Navigate } from "react-router-dom";
 import axios from "axios";
 
@@ -83,6 +83,7 @@ class SignIn extends Component {
               placeholder="Nazwa użytkownika"
               onChange={this.handleChange}
             />
+
             <input
               className="auth-input"
               maxLength="30"

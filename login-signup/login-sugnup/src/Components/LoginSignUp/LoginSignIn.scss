@@ -55,7 +55,6 @@
   .auth-input {
     display: flex;
     align-items: center;
-    margin: auto;
     width: 480px;
     height: 80px;
     background: #eaeaea;
@@ -63,5 +62,10 @@
     border: none;
     outline: none;
     font-size: 19px;
+    margin: 10px;
+    text-indent: 60px;
   }
+  
+
+
 }
